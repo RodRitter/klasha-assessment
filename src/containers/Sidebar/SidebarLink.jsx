@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { useRoute, Link } from "wouter";
-import { Typography } from "../../components/base";
 import colours from "../../lib/colours";
 import Icon from "../../components/Icon";
 

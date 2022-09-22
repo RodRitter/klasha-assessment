@@ -83,7 +83,7 @@ const Table = ({ children, head, data, rows }) => {
         const _data = [...data];
 
         setItems(_data.splice((page - 1) * rows, rows));
-    }, [page]);
+    }, [page, data, rows]);
 
     const renderPagination = () => {
         const total = Math.ceil(data.length / rows) + 1;
