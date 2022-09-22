@@ -21,11 +21,9 @@ yarn start
 ## Run tests
 
 ```
-
 npm run test
 // or
 yarn test
-
 ```
 
 ## Notes
