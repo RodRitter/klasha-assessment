@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import colours from "../../lib/colours";
 import { Typography, Divider } from "../../components/base";
@@ -86,8 +86,6 @@ const LangButton = (props) => (
 
 const Header = () => {
     const [live, setLive] = useState(true);
-
-    const welcomeButtonRef = useRef();
 
     return (
         <HeaderWrapper>
