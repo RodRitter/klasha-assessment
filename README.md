@@ -2,11 +2,27 @@
 
 ## Get started
 
-`npm install` or `yarn`
+```
+// Install
+
+npm install
+// or
+yarn
+
+// Start
+
+npm start
+// or
+yarn start
+```
 
 ## Run tests
 
-`npm run test` or `yarn test`
+```
+npm run test
+// or
+yarn test
+```
 
 ## Notes
 
