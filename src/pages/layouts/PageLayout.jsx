@@ -38,6 +38,10 @@ const PageContent = styled.div`
     padding: 80px 32px;
     max-width: 1160px;
     margin: 0 auto;
+
+    ${breakpoints.md} {
+        padding: 20px;
+    }
 `;
 
 const PageLayout = ({ children }) => {

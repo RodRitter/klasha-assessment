@@ -6,6 +6,7 @@ import { Typography } from "../components/base";
 import TextInput from "../components/TextInput";
 import Button from "../components/Button";
 import { Table } from "../components/Table";
+import Dropdown from "../components/Dropdown";
 import mockData from "../lib/mockData";
 import breakpoints from "../lib/breakpoints";
 
@@ -52,6 +53,18 @@ const FilterButtons = styled.div`
     display: flex;
 `;
 
+const DropdownFilterButton = (props) => (
+    <FilterButton
+        variant="ghost"
+        icon="filter"
+        iconAlign="right"
+        size="sm"
+        {...props}
+    >
+        Filter
+    </FilterButton>
+);
+
 const Transactions = () => {
     return (
         <PageLayout>
@@ -62,14 +75,13 @@ const Transactions = () => {
                         <TextInput placeholder="Search" icon="search" />
                     </div>
                     <FilterButtons>
-                        <FilterButton
-                            variant="ghost"
-                            icon="filter"
-                            iconAlign="right"
-                            size="sm"
-                        >
-                            Filter
-                        </FilterButton>
+                        <Dropdown button={DropdownFilterButton} align="center">
+                            <Typography>Dropdown Item #1</Typography>
+                            <Typography>Dropdown Item #2</Typography>
+                            <Typography>Dropdown Item #3</Typography>
+                            <Typography>Dropdown Item #4</Typography>
+                        </Dropdown>
+
                         <FilterButton variant="ghost">Export</FilterButton>
                     </FilterButtons>
                 </FiltersSection>

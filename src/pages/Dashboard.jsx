@@ -3,8 +3,9 @@ import styled from "styled-components";
 import PageLayout from "./layouts/PageLayout";
 import { Typography, Divider } from "../components/base";
 import Button from "../components/Button";
-import colours from "../lib/colours";
+import Dropdown from "../components/Dropdown";
 import MockGraph from "../components/MockGraph";
+import colours from "../lib/colours";
 import breakpoints from "../lib/breakpoints";
 
 const SalesOverview = styled.div`
@@ -51,6 +52,10 @@ const Panel = styled.div`
             background-image: url("images/lines.svg");
             background-position: center center;
         `}
+    
+    ${breakpoints.sm} {
+        padding: 10px;
+    }
 `;
 
 const PanelHeading = styled(Typography)`
@@ -93,6 +98,12 @@ const CallToActionText = styled(Typography)`
     line-height: 32px;
 `;
 
+const CurrencyFilterButton = (props) => (
+    <Button variant="ghost" icon="drop-down" iconAlign="right" {...props}>
+        USD
+    </Button>
+);
+
 const Dashboard = () => {
     return (
         <PageLayout>
@@ -132,9 +143,12 @@ const Dashboard = () => {
                     </SalesDayFilter>
                     <SalesDayFilter variant="text">30 days</SalesDayFilter>
 
-                    <Button variant="ghost" icon="drop-down" iconAlign="right">
-                        USD
-                    </Button>
+                    <Dropdown button={CurrencyFilterButton} align="center">
+                        <Typography>Dropdown Item #1</Typography>
+                        <Typography>Dropdown Item #2</Typography>
+                        <Typography>Dropdown Item #3</Typography>
+                        <Typography>Dropdown Item #4</Typography>
+                    </Dropdown>
                 </SalesFilters>
                 <div></div>
             </Sales>

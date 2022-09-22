@@ -93,13 +93,14 @@ const Table = ({ children, head, data, rows }) => {
             <NavButton
                 variant="text"
                 icon="arrow-left"
+                key="left-nav"
                 onClick={() => setPage(Math.max(1, page - 1))}
             />
         );
 
         for (let i = 1; i < total; i++) {
             if (i === 4) {
-                pages.push(<span>...</span>);
+                pages.push(<span key={i}>...</span>);
             }
 
             if (i <= 3 || i >= total - 3) {
@@ -108,6 +109,7 @@ const Table = ({ children, head, data, rows }) => {
                         variant="text"
                         onClick={() => setPage(i)}
                         active={page === i}
+                        key={i}
                     >
                         {i}
                     </PageButton>
@@ -119,11 +121,12 @@ const Table = ({ children, head, data, rows }) => {
                             variant="text"
                             onClick={() => setPage(i)}
                             active={page === i}
+                            key={i}
                         >
                             {i}
                         </PageButton>
                     );
-                    pages.push(<span>...</span>);
+                    pages.push(<span key="last-elipse">...</span>);
                 }
             }
         }
@@ -132,6 +135,7 @@ const Table = ({ children, head, data, rows }) => {
             <NavButton
                 variant="text"
                 icon="arrow-right"
+                key="right-nav"
                 onClick={() => setPage(Math.min(total, page + 1))}
             />
         );
